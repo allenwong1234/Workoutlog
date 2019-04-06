@@ -1,0 +1,42 @@
+<h1>Create an account</h1>
+<%= form_for :account, url: accounts_path do |f| %>
+    <p>
+        <%= f.label :name %><br>
+        <%= f.text_field :title %>
+    </p>
+    
+    <p>
+        <%= f.label :email %><br>
+        <%= f.text_field :email %>
+    </p>
+    
+    <p>
+        <%= f.label :password %><br>
+        <%= f.text_field :password %>
+    </p>
+    
+    <p>
+        <%= f.label :gender %><br>
+        <%= f.select :gender, ['female', 'male'] %>
+    </p>
+    
+    <p>
+        <%= f.label :dob %><br>
+        <%= f.text_field :dob %>
+    </p>
+    
+    <p>
+        <%= f.label :height %><br>
+        <%= f.text_field :height %>
+    </p>
+    
+    <p>
+        <%= f.label :weight %><br>
+        <%= f.text_field :weight %>
+    </p>
+    
+    <p>
+        <%= f.submit %>
+    </p>
+    
+<% end %>
