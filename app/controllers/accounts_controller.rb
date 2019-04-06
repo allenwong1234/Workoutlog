@@ -3,6 +3,14 @@ class AccountsController < ApplicationController
     end
     
     def create  
-        render plain: params[:account].inspect
+        @account = Account.new(params[:account])
+        
+        @account.save
+        redirect_to @account
     end
 end
+
+private 
+    def account_params
+        params.require(:account).permit(:name, :email, :password, :gender, :dob, :height, :weight)
+    end
