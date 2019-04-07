@@ -18,8 +18,8 @@ ActiveRecord::Schema.define(version: 2019_04_06_042246) do
     t.string "password"
     t.string "gender"
     t.string "dob"
-    t.string "height"
-    t.string "weight"
+    t.integer "height"
+    t.integer "weight"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

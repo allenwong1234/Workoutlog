@@ -1,3 +1,87 @@
 // Place all the styles related to the Home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* Title */
+#titlecolor{
+  font-size:100px;
+  color: dodgerblue;
+  text-align: center;
+}
+
+#logo {
+  margin: 0;
+  width: 200px;
+  height: 200px;
+  position:absolute;
+  left: 400px;
+  top: 30px;
+  
+}
+
+/* Title */
+body {
+  background-color: lightgrey;
+}
+
+/* Title */
+
+.content{
+  padding-left: 15%;
+  padding-top: 10px;
+  padding-right: 15%;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-top: auto;
+  height: 100%;
+  padding: 30px;
+  border-style: solid;
+  border-color: black;
+  border-width: thin;
+  background-color:white;
+  text-align: center;
+  font-size: 15pt;
+}
+
+/* Top Navigation Bar */
+.topnav{
+  margin-top: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: auto;
+  text-align: center;
+  height: 5%;
+
+  
+}
+
+
+.topnav ul {
+  list-style-type: none;
+  margin-bottom: 35px;
+  padding: 10px 10px;
+  overflow: hidden;
+
+  
+}
+
+.topnav li {
+display: inline-flex;
+}
+
+.topnav li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 10px 50px;
+  text-decoration: none;
+  border-style: solid;
+  border-color: black;
+  border-width: thin;
+  background-color:white;
+  font-size: 18pt;
+}
+
+li a:hover {
+  background-color: lightgrey;
+}

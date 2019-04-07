@@ -6,8 +6,8 @@ class CreateAccounts < ActiveRecord::Migration[5.2]
       t.string :password
       t.string :gender
       t.string :dob
-      t.string :height
-      t.string :weight
+      t.integer :height
+      t.integer :weight
 
       t.timestamps
     end

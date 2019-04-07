@@ -1,3 +1,29 @@
 // Place all the styles related to the Accounts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.contentaccount{
+  padding-left: 15%;
+  padding-top: 10px;
+  padding-right: 15%;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-top: auto;
+  height: 100%;
+  padding: 30px;
+  border-style: solid;
+  border-color: black;
+  border-width: thin;
+  background-color:white;
+  text-align: center;
+  font-size: 15pt;
+}
+
+.col-container {
+    display: table; /* Make the container element behave like a table */
+    width: 100%; /* Set full-width to expand the whole page */
+}
+
+.col {
+    display: table-cell; /* Make elements inside the container behave like table cells */
+}
