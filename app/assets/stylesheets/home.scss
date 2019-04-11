@@ -6,7 +6,8 @@
 #titlecolor{
   font-size:100px;
   color: dodgerblue;
-  text-align: center;
+  text-align: right;
+  margin-right: 20%;
 }
 
 #logo {
@@ -14,12 +15,12 @@
   width: 200px;
   height: 200px;
   position:absolute;
-  left: 400px;
-  top: 30px;
+  left: 20%;
+  top: 5%;
   
 }
 
-/* Title */
+/* Body */
 body {
   background-color: lightgrey;
 }

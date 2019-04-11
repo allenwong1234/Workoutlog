@@ -3,88 +3,83 @@
 <head>
 <img src="https://performbetter.co.uk/wp-content/uploads/2018/06/workout-logo.png" id="logo">
 <h1 id=titlecolor>Azure Workout</h1>
-
-
 </head>
 
 <body>
     
-    <div class = "topnav">
-<nav>
-    <ul>
-        <li><%= link_to 'Home', home_index_path %></a></li>
-        <li><a>Workout Log</a></li>
-        <li><a>Progress</a></li>
-        <li><%= link_to 'Account', new_account_path %></li>
-        <li><a>Contact Us</a></li>
-    </ul>
-</nav>
+<div class = "topnav">
+    <nav>
+        <ul>
+            <li><%= link_to 'Home', home_index_path %></a></li>
+            <li><a>Workout Log</a></li>
+            <li><a>Progress</a></li>
+            <li><%= link_to 'Account', new_account_path %></li>
+            <li><a>Contact Us</a></li>
+        </ul>
+    </nav>
 </div>
 
 <div class=contentaccount>
+    <div class=col-container>
+        <div class="col">
+            <h1>Create an account</h1>
+            <%= form_for :account, url: accounts_path do |f| %>
+                <p>
+                    <%= f.label :name %><br>
+                    <%= f.text_field :name %>
+                </p>
+                
+                <p>
+                    <%= f.label :email %><br>
+                    <%= f.text_field :email %>
+                </p>
+                
+                <p>
+                    <%= f.label :password %><br>
+                    <%= f.text_field :password %>
+                </p>
+                
+                <p>
+                    <%= f.label :gender %><br>
+                    <%= f.select :gender, ['female', 'male'] %>
+                </p>
+                
+                <p>
+                    <%= f.label :DOB %><br>
+                    <%= f.text_field :dob %>
+                </p>
+                
+                <p>
+                    <%= f.label :height %><br>
+                    <%= f.select :feet, ['4', '5', '6', '7'] %> Feet
+                    <%= f.select :inches, ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11'] %> Inches
+                </p>
+                
+                <p>
+                    <%= f.label :weight %><br>
+                    <%= f.text_field :weight %>
+                </p>
+                
+                <p>
+                    <%= f.submit %>
+                </p>
+                
+            <% end %>
+        </div>
 
-<div class=col-container>
-    <div class="col">
-<h1>Create an account</h1>
-<%= form_for :account, url: accounts_path do |f| %>
-    <p>
-        <%= f.label :name %><br>
-        <%= f.text_field :name %>
-    </p>
-    
-    <p>
-        <%= f.label :email %><br>
-        <%= f.text_field :email %>
-    </p>
-    
-    <p>
-        <%= f.label :password %><br>
-        <%= f.text_field :password %>
-    </p>
-    
-    <p>
-        <%= f.label :gender %><br>
-        <%= f.select :gender, ['female', 'male'] %>
-    </p>
-    
-    <p>
-        <%= f.label :dob %><br>
-        <%= f.text_field :dob %>
-    </p>
-    
-    <p>
-        <%= f.label :height %><br>
-        <%= f.text_field :height %>
-    </p>
-    
-    <p>
-        <%= f.label :weight %><br>
-        <%= f.text_field :weight %>
-    </p>
-    
-    <p>
-        <%= f.submit %>
-    </p>
-    
-<% end %>
+        <div class="col">
+            <h1>Login</h1>
+            <form>
+                <fieldset style="border-style: none;">
+                Email:<br/> <input type="text"><br/> <br/>
+                Password: <br> <input type="text"><br>
+                </fieldset>
+                <button type="button" >Login</button>
+            </form>
+        </div>
+        
+        
+    </div>
 </div>
-
-<div class="col">
-    
-    <h1>Login</h1>
-
-<form>
- <fieldset style="border-style: none;">
-  Email:<br/> <input type="text"><br/> <br/>
-  Password: <br> <input type="text"><br>
- </fieldset>
- <button type="button" >Login</button>
-</form>
-
-</div>
-
-</div>
-
-
 </body>
 </html>
