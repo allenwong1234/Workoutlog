@@ -2,8 +2,11 @@ class AccountsController < ApplicationController
     def new
     end
     
-    def create  
-        @account = Account.new(params[:account])
+    def index
+    end
+    
+    def create
+        @account = Account.new(params[accounts_params])
         
         @account.save
         redirect_to @account
@@ -11,6 +14,6 @@ class AccountsController < ApplicationController
 end
 
 private 
-    def account_params
-        params.require(:account).permit(:name, :email, :password, :gender, :dob, :height, :weight)
+    def accounts_params
+        params.require(:account).permit(:name, :email, :password, :gender, :dob, :feet, :inches, :weight)
     end
