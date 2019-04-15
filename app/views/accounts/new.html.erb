@@ -6,94 +6,111 @@
 </head>
 
 <body>
+    <div class = "topnav">
+        <nav>
+            <ul>
+                <li><%= link_to 'Home', home_index_path %></a></li>
+                <li><a>Workout Log</a></li>
+                <li><a>Progress</a></li>
+                <li><%= link_to 'Account', new_account_path %></li>
+                <li><a>Contact Us</a></li>
+            </ul>
+        </nav>
+    </div>
     
-<div class = "topnav">
-    <nav>
-        <ul>
-            <li><%= link_to 'Home', home_index_path %></a></li>
-            <li><a>Workout Log</a></li>
-            <li><a>Progress</a></li>
-            <li><%= link_to 'Account', new_account_path %></li>
-            <li><a>Contact Us</a></li>
-        </ul>
-    </nav>
-</div>
+    <button class="open-button" onclick="openForm()">Open Form</button>
 
-<button class="open-button" onclick="openForm()">Open Form</button>
+    <div class="form-popup" id="myForm">
+        <form action="/action_page.php" class="form-container">
+        <h1>Login</h1>
+        
+        <label for="email"><b>Email</b></label>
+        <input type="text" placeholder="Enter Email" name="email" required>
+        
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required>
+        
+        <button type="submit" class="btn">Login</button>
+        <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+        </form>
+    </div>
 
-<div class="form-popup" id="myForm">
-  <form action="/action_page.php" class="form-container">
-    <h1>Login</h1>
 
-    <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Enter Email" name="email" required>
 
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
-
-    <button type="submit" class="btn">Login</button>
-    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-  </form>
-</div>
-
-<div class=contentaccount>
-    <div class=col-container>
-        <div class="col">
-            <h1>Create an account</h1>
-            <%= form_for :account, url: accounts_path do |f| %>
+  
+    <div class=contentaccount>
+        <div class=col-container>
+            <div class="col">
+            
+                <% if @account.errors.any? %>
+                    <div id="error_explanation">
+                        <h2>
+                        <%= pluralize(@account.errors.count, "error") %> prohibited
+                        this article from being saved:a
+                        <% @account.errors.full_messages.each do |msg| %>
+                        <li><%= msg %></li>
+                        <% end %>
+                        </ul>
+                    </div>
+                <% end %>
+                
+                
+                <h1>Create an account</h1>
+                <%= form_for :account, url: accounts_path do |f| %>
                 <p>
-                    <%= f.label :name %><br>
-                    <%= f.text_field :name %>
+                <%= f.label :name %><br>
+                <%= f.text_field :name %>
                 </p>
                 
                 <p>
-                    <%= f.label :email %><br>
-                    <%= f.text_field :email %>
+                <%= f.label :email %><br>
+                <%= f.text_field :email %>
                 </p>
                 
                 <p>
-                    <%= f.label :password %><br>
-                    <%= f.text_field :password %>
+                <%= f.label :password %><br>
+                <%= f.text_field :password %>
                 </p>
                 
                 <p>
-                    <%= f.label :gender %><br>
-                    <%= f.select :gender, ['female', 'male'] %>
+                <%= f.label :gender %><br>
+                <%= f.select :gender, ['female', 'male'] %>
                 </p>
                 
                 <p>
-                    <%= f.label :DOB %><br>
-                    <%= f.text_field :dob %>
+                <%= f.label :DOB %><br>
+                <%= f.text_field :dob %>
                 </p>
                 
                 <p>
-                    <%= f.label :height %><br>
-                    <%= f.select :feet, ['4', '5', '6', '7'] %> Feet
-                    <%= f.select :inches, ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11'] %> Inches
+                <%= f.label :height %><br>
+                <%= f.select :feet, ['4', '5', '6', '7'] %> Feet
+                <%= f.select :inches, ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11'] %> Inches
                 </p>
                 
                 <p>
-                    <%= f.label :weight %><br>
-                    <%= f.text_field :weight %>
+                <%= f.label :weight %><br>
+                <%= f.text_field :weight %>
                 </p>
                 
                 <p>
-                    <%= f.submit %>
+                <%= f.submit %>
                 </p>
                 
-            <% end %>
+                <% end %>
+            </div>
         </div>
     </div>
-</div>
 
-<script>
-function openForm() {
-  document.getElementById("myForm").style.display = "block";
-}
-
-function closeForm() {
-  document.getElementById("myForm").style.display = "none";
-}
-</script>
+    <script>
+        function openForm() {
+          document.getElementById("myForm").style.display = "block";
+        }
+        
+        function closeForm() {
+          document.getElementById("myForm").style.display = "none";
+        }
+    </script>
 </body>
+
 </html>

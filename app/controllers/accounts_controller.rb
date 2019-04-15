@@ -3,6 +3,7 @@ class AccountsController < ApplicationController
     end
     
     def index
+        @account = Account.all
     end
     
     def create

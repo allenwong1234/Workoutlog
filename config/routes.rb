@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'user/index'
     get 'home/index'
     
     resources :accounts
