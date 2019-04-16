@@ -10,8 +10,8 @@
         <nav>
             <ul>
                 <li><%= link_to 'Home', home_index_path %></a></li>
-                <li><a>Workout Log</a></li>
-                <li><a>Progress</a></li>
+                <li><%= link_to 'Workout Log', user_new_path %></li>
+                <li><%= link_to 'Progress', user_show_path %></a></li>
                 <li><%= link_to 'Account', new_account_path %></li>
                 <li><a>Contact Us</a></li>
             </ul>
@@ -41,22 +41,23 @@
     <div class=contentaccount>
         <div class=col-container>
             <div class="col">
-            
+                
+                <h1>Create an account</h1>
+                <%= form_for :account, url: accounts_path do |f| %>
                 <% if @account.errors.any? %>
                     <div id="error_explanation">
                         <h2>
                         <%= pluralize(@account.errors.count, "error") %> prohibited
-                        this article from being saved:a
-                        <% @account.errors.full_messages.each do |msg| %>
-                        <li><%= msg %></li>
-                        <% end %>
+                        this Account from being created:
+                        </h2>
+                        <ul>
+                            <% @account.errors.full_messages.each do |msg| %>
+                                <li><%= msg %></li>
+                            <% end %>
                         </ul>
                     </div>
                 <% end %>
                 
-                
-                <h1>Create an account</h1>
-                <%= form_for :account, url: accounts_path do |f| %>
                 <p>
                 <%= f.label :name %><br>
                 <%= f.text_field :name %>

@@ -1,16 +1,24 @@
 class AccountsController < ApplicationController
     def new
+        @account = Account.new
     end
     
     def index
         @account = Account.all
     end
     
+    def show
+        @account = Account.find(params[:id])
+    end 
+    
     def create
         @account = Account.new(params[accounts_params])
         
-        @account.save
-        redirect_to @account
+        if @account.save
+            redirect_to @account 
+        else
+            render 'new'
+        end 
     end
 end
 
