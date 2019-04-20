@@ -3,21 +3,29 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 /* Title */
+
+.titlebar{
+  position: static;
+  left: 0px;
+  top: 0px;
+  z-index: -1;
+}
+
 #titlecolor{
   font-size:100px;
   color: dodgerblue;
   text-align: right;
   margin-right: 20%;
+  position: relative;
+
 }
 
 #logo {
-  margin: 0;
   width: 200px;
   height: 200px;
-  position:absolute;
-  left: 20%;
-  top: 5%;
-  
+  position: relative;
+  margin-right: 20px;
+  vertical-align:middle;
 }
 
 /* Body */
@@ -52,7 +60,6 @@ body {
   margin-bottom: auto;
   text-align: center;
   height: 5%;
-
   
 }
 
@@ -86,3 +93,4 @@ display: inline-flex;
 li a:hover {
   background-color: lightgrey;
 }
+
