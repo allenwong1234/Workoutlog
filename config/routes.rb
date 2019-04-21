@@ -1,10 +1,9 @@
 Rails.application.routes.draw do
     get 'home/index'
     
-        resource :accounts
-        resource :users
-        resource :logs
-        resource :contacts
+    resources :accounts
+    
+    get 'exit', to: 'sessions#destroy', as: :logout
     
     root 'home#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
