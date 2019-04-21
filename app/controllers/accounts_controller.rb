@@ -8,15 +8,11 @@ class AccountsController < ApplicationController
     end
 
     def create
-        @account = Account.new(params[accounts_params])
+        @account = Account.new(accounts_params)
             
-            @account.save
-            redirect_to @account 
-            
-    
+        @account.save
+        redirect_to @account 
     end
-    
-    
 end
 
 private 
