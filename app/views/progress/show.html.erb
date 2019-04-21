@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<div class=titlebar>
+<h1 id=titlecolor><img src="https://performbetter.co.uk/wp-content/uploads/2018/06/workout-logo.png" id="logo">Azure Workout</h1>
+</div>
+</head>
+
+<body>
+    <div class = "topnav">
+        <nav>
+            <ul>
+                <li><%= link_to 'Home', home_index_path %></li>
+                <li><%= link_to 'Workout Log', new_log_path%></li>
+                <li><%= link_to 'Progress',new_progress_path %></li>
+                <li><%= link_to 'Account',account_path(1) %></li>
+                <li><%= link_to 'Contact Us', new_contact_path%></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class = "workoutContent">
+        <div class = "calendar">
+            <%= month_calendar do |date| %>
+                <%= date %>
+            <% end %>
+        </div>
+    </div>
+</body>
+
+</html>

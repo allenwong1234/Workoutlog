@@ -2,6 +2,10 @@ Rails.application.routes.draw do
     get 'home/index'
     
     resources :accounts
+    resources :logs
+    resources :progress
+    resources :contacts
+   
     
     get 'exit', to: 'sessions#destroy', as: :logout
     
