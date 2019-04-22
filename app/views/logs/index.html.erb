@@ -11,15 +11,41 @@
         <nav>
             <ul>
                 <li><%= link_to 'Home', home_index_path %></li>
-                <li><%= link_to 'Workout Log', new_log_path%></li>
+                <li><%= link_to 'Workout Log', logs_path%></li>
                 <li><%= link_to 'Progress',new_progress_path %></li>
-                <li><%= link_to 'Account',account_path(1) %></li>
+                <li><%= link_to 'Account',new_account_path %></li>
                 <li><%= link_to 'Contact Us', new_contact_path%></li>
             </ul>
         </nav>
     </div>
-        
     
+    <div class = "logs-index">
+        
+        <h1>Listing logs</h1>
+        <%= link_to 'New log', new_log_path %>
+        
+        <table>
+            <tr>
+                <th>Date</th>
+                <th>Workout focus</th>
+                <th>Description</th>
+            </tr>
+            
+            <% @log.each do |log| %>
+            <tr>
+                <td><%= log.date %></td>
+                <td><%= log.focus %></td>
+                <td><%= log.details %></td>
+                <td><%= link_to 'Show', log_path(log) %></td>
+                <td><%= link_to 'Edit', edit_log_path(log) %></td>
+                <td><%= link_to 'Destroy',log_path(log),
+               		                      method: :delete,
+                	                      data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+            <% end %>
+        </table>
+    </div>
+        
 </body>
     
 </html>

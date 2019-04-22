@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<div class=titlebar>
+<h1 id=titlecolor><img src="https://performbetter.co.uk/wp-content/uploads/2018/06/workout-logo.png" id="logo">Azure Workout</h1>
+</div>
+</head>
+
+<body>
+    <div class = "topnav">
+        <nav>
+            <ul>
+                <li><%= link_to 'Home', home_index_path %></li>
+                <li><%= link_to 'Workout Log', logs_path%></li>
+                <li><%= link_to 'Progress',new_progress_path %></li>
+                <li><%= link_to 'Account',new_account_path %></li>
+                <li><%= link_to 'Contact Us', new_contact_path%></li>
+            </ul>
+        </nav>
+    </div>
+        
+    <div class = "logs-edit">
+        
+        <h1>Editing workout log</h1>
+        <%= form_for :log, url: log_path(@log), method: :patch do |f| %>
+        
+            <% if @log.errors.any? %>
+                <div id="error_explanation">
+                    <h2>
+                        <%= pluralize(@log.errors.count, "error") %> prohibited
+                        this article from being saved:
+                    </h2>
+                    <ul>
+                        <% @log.errors.full_messages.each do |msg| %>
+                            <li><%= msg %></li>
+                        <% end %>
+                    </ul>
+                </div>
+            <% end %>
+        
+            <p>
+                <%= f.label :date, 'Today\'s date' %><br>
+                <%= f.text_field :date %>
+            </p>
+            
+            <p>
+                <%= f.label :focus, 'Workout focus'  %><br>
+                <%= f.text_field :focus %>
+            </p>
+            
+            <p>
+                <%= f.label :details, 'Description' %><br>
+                <%= f.text_area :details %>
+            </p>
+            
+            <p>
+                <%= f.submit %>
+            </p>
+        <% end %>
+        <%= link_to 'Back', logs_path %>
+        
+    </div>
+    
+</body>
+    
+</html>

@@ -11,15 +11,30 @@
         <nav>
             <ul>
                 <li><%= link_to 'Home', home_index_path %></li>
-                <li><%= link_to 'Workout Log', new_log_path%></li>
+                <li><%= link_to 'Workout Log', logs_path%></li>
                 <li><%= link_to 'Progress',new_progress_path %></li>
-                <li><%= link_to 'Account',account_path(1) %></li>
+                <li><%= link_to 'Account',accounts_path %></li>
                 <li><%= link_to 'Contact Us', new_contact_path%></li>
             </ul>
         </nav>
     </div>
     
     
+    <div class = "Account-index">
+        
+        
+        <table>
+            <tr>
+                <th>Account Info</th>
+            </tr>
+            
+                <td><%= link_to 'Show', account_path(account) %></td>
+                <td><%= link_to 'Edit', edit_log_path(account) %></td>
+                <td><%= link_to 'Destroy',log_path(account),
+               		                      method: :delete,
+                	                      data: { confirm: 'Are you sure?' } %></td>
+        </table>
+    </div>
 </body>
 
 </html>

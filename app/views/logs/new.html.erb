@@ -11,18 +11,33 @@
         <nav>
             <ul>
                 <li><%= link_to 'Home', home_index_path %></li>
-                <li><%= link_to 'Workout Log', new_log_path%></li>
+                <li><%= link_to 'Workout Log', logs_path%></li>
                 <li><%= link_to 'Progress',new_progress_path %></li>
-                <li><%= link_to 'Account',account_path(1) %></li>
+                <li><%= link_to 'Account',new_account_path %></li>
                 <li><%= link_to 'Contact Us', new_contact_path%></li>
             </ul>
         </nav>
     </div>
         
-    <div class = "logs-body">
+    <div class = "logs-new">
         
         <h1>Create a workout log entry</h1>
         <%= form_for :log, url: logs_path do |f| %>
+        
+            <% if @log.errors.any? %>
+                <div id="error_explanation">
+                    <h2>
+                        <%= pluralize(@log.errors.count, "error") %> prohibited
+                        this article from being saved:
+                    </h2>
+                    <ul>
+                        <% @log.errors.full_messages.each do |msg| %>
+                            <li><%= msg %></li>
+                        <% end %>
+                    </ul>
+                </div>
+            <% end %>
+        
             <p>
                 <%= f.label :date, 'Today\'s date' %><br>
                 <%= f.text_field :date %>
@@ -42,6 +57,7 @@
                 <%= f.submit %>
             </p>
         <% end %>
+        <%= link_to 'Back', logs_path %>
         
     </div>
     
